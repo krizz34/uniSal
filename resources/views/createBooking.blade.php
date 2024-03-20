@@ -17,12 +17,17 @@
             </ul>
         </div>
     @endif
+    @if (session('exist'))
+        <div class="alert alert-success">
+            {{ session('exist') }}
+        </div>
+    @endif
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <form action="{{ route('bookings.store') }}" method="POST">
+    <form action="{{ route('bookings.pushToDB') }}" method="POST">
         @csrf
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
