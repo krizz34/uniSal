@@ -6,7 +6,7 @@ use App\Http\Controllers\BookingsController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Route to display booking form
 Route::get('/create', [BookingsController::class, 'createBooking'])->name('bookings.createBooking');
