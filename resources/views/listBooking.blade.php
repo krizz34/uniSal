@@ -30,10 +30,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="{{ route('bookings.createBooking') }}">Book an Appointment</a>
+                <a class="nav-link font-weight-bold" href="{{ route('routeTo:createBooking') }}">Book an Appointment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link font-weight-bold active" href="{{ route('thenga') }}">List Bookings</a>
+                <a class="nav-link font-weight-bold active" href="{{ route('routeTo:listBooking') }}">List Bookings</a>
             </li>
             </ul>
             <ul class="navbar-nav ml-auto">

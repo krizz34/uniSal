@@ -8,21 +8,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Route to display booking form
-Route::get('/create', [BookingsController::class, 'createBooking'])->name('bookings.createBooking');
+Route::get('/create', [BookingsController::class, 'createBooking'])->name('routeTo:createBooking');
 
-// Route to store booking
-Route::post('/bookings', [BookingsController::class, 'pushToDB'])->name('bookings.pushToDB');
+Route::post('/bookings', [BookingsController::class, 'pushToDB'])->name('routeTo:pushToDB');
 
-Route::get('/listBookings', [BookingsController::class, 'index'])->name('thenga');
+Route::get('/listBookings', [BookingsController::class, 'index'])->name('routeTo:listBooking');
 
-// Route to delete booking
 Route::delete('/bookings/{id}', [BookingsController::class, 'delete'])->name('bookings.delete');
 
-// Route to edit booking
 Route::get('/bookings/{id}/edit', [BookingsController::class, 'edit'])->name('bookings.edit');
 
-// Route to update booking
 Route::put('/bookings/{id}', [BookingsController::class, 'update'])->name('bookings.update');
 
 

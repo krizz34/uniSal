@@ -30,10 +30,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link font-weight-bold " href="{{ route('bookings.createBooking') }}">Book an Appointment</a>
+            <a class="nav-link font-weight-bold " href="{{ route('routeTo:createBooking') }}">Book an Appointment</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link font-weight-bold " href="{{ route('thenga') }}">List Bookings</a>
+            <a class="nav-link font-weight-bold " href="{{ route('routeTo:listBooking') }}">List Bookings</a>
         </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -49,7 +49,7 @@
 
     <div class="container text-center">
         <h1 class='text-bold mb-5' style=" margin-top: 200px;">Welcome to <img src="/images/logo.png" alt="logo of FilmiHub" class="img-fluid" style=" max-height: 200px; margin-top: -10px;" /></h1>
-        <button href="{{ route('bookings.createBooking') }}" class="btn btn-lg btn-dark" style="background-color: black; margin-top: -30px;">Book your Appointment</button>
+        <button href="{{ route('routeTo:createBooking') }}" class="btn btn-lg btn-dark" style="background-color: black; margin-top: -30px;">Book your Appointment</button>
     </div>
 
     

@@ -9,7 +9,6 @@ class BookingsController extends Controller
 {
     public function index()
     {
-        // Fetch all bookings
         $bookings = Booking::all();
         return view('listBooking', compact('bookings'));
     }
@@ -21,7 +20,6 @@ class BookingsController extends Controller
 
     public function pushToDB(Request $request)
 {
-    // Validate the form data
     $request->validate([
         'name' => 'required|string',
         'mobile' => 'required|numeric|min:1000000000|max:9999999999',
@@ -29,7 +27,6 @@ class BookingsController extends Controller
         'bookingSlot' => 'required|string',
     ]);
 
-    // Check if a booking already exists for the given bookingDate and bookingSlot
     $existingBooking = Booking::where('bookingDate', $request->bookingDate)
                                 ->where('bookingSlot', $request->bookingSlot)
                                 ->exists();
@@ -38,7 +35,6 @@ class BookingsController extends Controller
         return redirect()->back()->with('exist', 'Sorry! The slot is not available.');
     }
 
-    // Create a new booking
     Booking::create($request->all());
 
     return redirect()->back()->with('success', 'Booking created successfully.');
@@ -61,7 +57,6 @@ class BookingsController extends Controller
 
     public function update($id, Request $request)
     {
-        // Validate the form data
         $request->validate([
             'name' => 'required|string',
             'mobile' => 'required|numeric|min:1000000000|max:9999999999',
@@ -69,10 +64,8 @@ class BookingsController extends Controller
             'bookingSlot' => 'required|string',
         ]);
 
-        // Find the booking by ID
         $booking = Booking::findOrFail($id);
 
-        // Check if a booking already exists for the given bookingDate and bookingSlot
         $existingBooking = Booking::where('bookingDate', $request->bookingDate)
                                     ->where('bookingSlot', $request->bookingSlot)
                                     ->exists();
@@ -81,10 +74,9 @@ class BookingsController extends Controller
             return redirect()->back()->with('exist', 'Sorry! The slot is not available.');
         }
 
-        // Update the booking
         $booking->update($request->all());
 
-        return redirect()->route('thenga')->with('success', 'Booking updated successfully.');
+        return redirect()->route('routeTo:listBooking')->with('success', 'Booking updated successfully.');
     }
 
 

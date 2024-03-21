@@ -30,10 +30,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link font-weight-bold active" href="{{ route('bookings.createBooking') }}">Book an Appointment</a>
+            <a class="nav-link font-weight-bold active" href="{{ route('routeTo:createBooking') }}">Book an Appointment</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link font-weight-bold" href="{{ route('thenga') }}">List Bookings</a>
+            <a class="nav-link font-weight-bold" href="{{ route('routeTo:listBooking') }}">List Bookings</a>
         </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -69,41 +69,41 @@
             </div>
         @endif
         <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form action="{{ route('bookings.pushToDB') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Enter Name" class="form-control" required><br>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number" class="form-control" required><br>
-                </div>
-                <div class="form-group">
-                    <input type="date" id="bookingDate" name="bookingDate" class="form-control" required>
-                    <small class="form-text text-muted text-left">Select an Appointment date</small>
-                </div>
-                <div class="form-group">
-                    <select id="bookingSlot" name="bookingSlot" class="form-control" required>
-                        <option value="" disabled selected>Select your Preffered Time Slot</option>
-                        <option value="09:00 am">09:00 am</option>
-                        <option value="10:00 am">10:00 am</option>
-                        <option value="11:00 am">11:00 am</option>
-                        <option value="12:00 pm">12:00 pm</option>
-                        <option value="01:00 pm">01:00 pm</option>
-                        <option value="02:00 pm">02:00 pm</option>
-                        <option value="03:00 pm">03:00 pm</option>
-                        <option value="04:00 pm">04:00 pm</option>
-                        <option value="05:00 pm">05:00 pm</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-dark btn-block mt-4">Book Now</button>
-                </div>
+            <div class="col-md-6">
+                <form action="{{ route('routeTo:pushToDB') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Enter Name" class="form-control" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number" class="form-control" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="bookingDate" name="bookingDate" class="form-control" required>
+                        <small class="form-text text-muted text-left">Select an Appointment date</small>
+                    </div>
+                    <div class="form-group">
+                        <select id="bookingSlot" name="bookingSlot" class="form-control" required>
+                            <option value="" disabled selected>Select your Preffered Time Slot</option>
+                            <option value="09:00 am">09:00 am</option>
+                            <option value="10:00 am">10:00 am</option>
+                            <option value="11:00 am">11:00 am</option>
+                            <option value="12:00 pm">12:00 pm</option>
+                            <option value="01:00 pm">01:00 pm</option>
+                            <option value="02:00 pm">02:00 pm</option>
+                            <option value="03:00 pm">03:00 pm</option>
+                            <option value="04:00 pm">04:00 pm</option>
+                            <option value="05:00 pm">05:00 pm</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-dark btn-block mt-4">Book Now</button>
+                    </div>
 
-                
-                
-            </form>
-        </div>
+                    
+                    
+                </form>
+            </div>
     </div>
     </div>
 
